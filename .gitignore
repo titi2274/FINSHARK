@@ -1,0 +1,19 @@
+# Dependências do frontend
+frontend/node_modules/
+
+# Build
+frontend/build/
+
+# Variáveis de ambiente
+.env
+
+# VS Code
+.vscode/
+
+# Sistema
+Thumbs.db
+.DS_Store
+
+# Futuro backend .NET
+backend/bin/
+backend/obj/
