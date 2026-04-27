@@ -1,5 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* @tailwindcss v3 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Rubik&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
