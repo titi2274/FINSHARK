@@ -19,17 +19,17 @@ const Card: React.FC<Props> = ({ id, searchResult, onPortfolioCreate }: Props): 
       key={id}
       id={id}
     >
-      <Link to={'/company/${searchResult.symbol}'}
+      <Link to={`/company/${searchResult.symbol}`}
         className="font-bold text-center text-black md:text-left">
-        {searchResult.name} ({searchResult.symbol})
+        {(searchResult as any).instrument_name} ({searchResult.symbol})
       </Link>
       <p className="text-black">{searchResult.currency}</p>
       <p className="font-bold text-black">
-        {searchResult.exchangeShortName} - {searchResult.stockExchange}
+        {(searchResult as any).exchange}
       </p>
       <AddPortfolio
         onPortfolioCreate={onPortfolioCreate}
-        symbol={searchResult.symbol}
+        symbol={`${searchResult.symbol}-${(searchResult as any).exchange}`}
       />
     </div>
   );
