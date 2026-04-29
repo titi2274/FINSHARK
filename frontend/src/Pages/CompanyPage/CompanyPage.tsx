@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCompanyProfile } from "../../api";
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
+import Tile from "../../Components/Tile/Tile";
 
-interface Props {}
+interface Props { }
 
 const CompanyPage = (props: Props) => {
   let { ticker } = useParams();
@@ -31,25 +34,14 @@ const CompanyPage = (props: Props) => {
   return (
     <>
       {company ? (
-        <div className="company-profile-container p-6">
-          <h1 className="text-2xl font-bold mb-4">
-            {company.name} ({company.symbol})
-          </h1>
-
-          <p>
-            <strong>Exchange:</strong> {company.exchange}
-          </p>
-
-          <p>
-            <strong>Currency:</strong> {company.currency}
-          </p>
-
-          <p>
-            <strong>Price:</strong> ${company.close}
-          </p>
+        <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
+          <Sidebar />
+          <CompanyDashboard>
+            <Tile title="Company Name" subTitle={company.companyName} />
+          </CompanyDashboard>
         </div>
       ) : (
-        <div className="p-6">Company Not Found!</div>
+        <div>Company Not Found!</div>
       )}
     </>
   );
