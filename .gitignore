@@ -17,3 +17,32 @@ Thumbs.db
 # Futuro backend .NET
 backend/bin/
 backend/obj/
+
+# .NET
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Build results
+*.dll
+*.exe
+
+# VS Code / Visual Studio
+.vs/
+.vscode/
+
+# Rider
+.idea/
+
+# Environment variables
+.env
+
+# OS
+Thumbs.db
+.DS_Store
